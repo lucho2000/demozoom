@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head>
+        <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.10.1/css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.10.1/css/react-select.css" />
+    </head>
+</head>
+
+<!-- Dependencies for client view and component view -->
+<script src="https://source.zoom.us/2.10.1/lib/vendor/react.min.js"></script>
+<script src="https://source.zoom.us/2.10.1/lib/vendor/react-dom.min.js"></script>
+<script src="https://source.zoom.us/2.10.1/lib/vendor/redux.min.js"></script>
+<script src="https://source.zoom.us/2.10.1/lib/vendor/redux-thunk.min.js"></script>
+<script src="https://source.zoom.us/2.10.1/lib/vendor/lodash.min.js"></script>
+
+<!-- Choose between the client view or component view: -->
+
+<!-- CDN for client view -->
+<script src="https://source.zoom.us/zoom-meeting-2.10.1.min.js"></script>
+<script>
+
+    ZoomMtg.setZoomJSLib('https://source.zoom.us/{2.10.1}/lib', '/av')
+    // loads WebAssembly assets
+    ZoomMtg.preLoadWasm()
+    ZoomMtg.prepareWebSDK()
+    // loads language files, also passes any error messages to the ui
+    ZoomMtg.i18n.load('en-US')
+    ZoomMtg.i18n.reload('en-US')
+</script>
+
+<!-- CDN for component view -->
+<body>
+<div id="zmmtg-root"></div>
+<div id="aria-notify-area"></div>
+
+
+<div class="ReactModalPortal"></div>
+<div class="ReactModalPortal"></div>
+<div class="ReactModalPortal"></div>
+<div class="ReactModalPortal"></div>
+<div class="global-pop-up-box"></div>
+<div class="sharer-controlbar-container sharer-controlbar-container--hidden"></div>
+</body>
+<script>
+
+    const zoomMeetingSDK = document.getElementById('zmmtg-root')
+
+    // To hide
+    zoomMeetingSDK.style.display = 'none';
+
+    // To show
+    zoomMeetingSDK.style.display = 'block';
+</script>
+
+</html>
